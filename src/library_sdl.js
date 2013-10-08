@@ -756,6 +756,8 @@ var LibrarySDL = {
   },
 
   SDL_SetVideoMode: function(width, height, depth, flags) {
+    if ( (flags & 0x04000000) != 0 ) // SDL_OPENGL
+      Module.print("SDL_SetVideoMode: !(flags & SDL_OPENGL)");
     ['mousedown', 'mouseup', 'mousemove', 'DOMMouseScroll', 'mousewheel', 'mouseout'].forEach(function(event) {
       Module['canvas'].addEventListener(event, SDL.receiveEvent, true);
     });
