@@ -297,7 +297,9 @@ mergeInto(LibraryManager.library, {
                                       canvas['webkitRequestPointerLock'];
           canvas.exitPointerLock = document['exitPointerLock'] ||
                                    document['mozExitPointerLock'] ||
-                                   document['webkitExitPointerLock'];
+                                   document['webkitExitPointerLock'] ||
+                                   {bind: function(){ console.log('STUB: exitPointerLock not implemented');
+                                                      return this; }};
           canvas.exitPointerLock = canvas.exitPointerLock.bind(document);
           canvas.cancelFullScreen = document['cancelFullScreen'] ||
                                     document['mozCancelFullScreen'] ||

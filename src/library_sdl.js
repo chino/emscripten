@@ -929,7 +929,8 @@ var LibrarySDL = {
         }
         break;
       case 1: // SDL_ENABLE
-        Module['canvas'].exitPointerLock();
+        var f = Module['canvas'].exitPointerLock;
+				if(f) f();
         return 1;
         break;
       case -1: // SDL_QUERY
