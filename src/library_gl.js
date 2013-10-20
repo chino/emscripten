@@ -3952,11 +3952,11 @@ var LibraryGL = {
   glFogx: 'glFogi',
   glFogxv: 'glFogiv',
 
-  glPolygonMode: function(){}, // TODO
+  glPolygonMode: function(){ Runtime.warnOnce('glTexEnvi: TODO') },
 
-  glAlphaFunc: function(){}, // TODO
+  glAlphaFunc: function(){ Runtime.warnOnce('glAlphaFunc: TODO') },
 
-  glNormal3f: function(){}, // TODO
+  glNormal3f: function(){ Runtime.warnOnce('glNormal3f: TODO') },
 
   // Additional non-GLES rendering calls
 
